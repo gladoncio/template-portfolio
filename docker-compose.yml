@@ -1,0 +1,12 @@
+services:
+  script-service:
+    build: .
+    container_name: script-container
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./script.sh:/script.sh
+      - ./:/app
+    environment:
+      - SOME_ENV_VAR=value
+    working_dir: /app
